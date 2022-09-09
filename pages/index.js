@@ -17,14 +17,16 @@ const AppWrapper = styled.div`
 const ContentWrapper = styled.div`
   background-color: var(--neutral-grayish-blue);
   border-radius: 16px;
-  height: 400px;
+  height: 500px;
   width: 600px;
   margin: 0 auto;
   position: relative;
+  padding-inline: 16px;
 `;
 
 const NumberWrapper = styled.div`
   font-size: 24px;
+  font-weight: 400;
   color: var(--primary-neon-green);
   letter-spacing: 5px;
   margin-top: 56px;
@@ -36,6 +38,7 @@ const QuoteWrapper = styled.div`
   color: var(--primary-light-cyan);
   margin: 0 auto;
   text-align: center;
+  width: 100%;
 `;
 
 const DiceWrapper = styled.div`
@@ -48,6 +51,7 @@ const DiceWrapper = styled.div`
   display: grid;
   place-content: center;
   left: calc(50% - 75px);
+  transition: all 02 ease-in-out;
 
   button {
     background: none;
@@ -58,6 +62,19 @@ const DiceWrapper = styled.div`
     cursor: pointer;
     outline: inherit;
   }
+  :hover {
+    transform: scale(1.1);
+  }
+`;
+
+const DividerWrapper = styled.div`
+  margin-top: 38px;
+  margin-bottom: 48px;
+  width: 100%;
+  position: relative;
+  height: 30px;
+  display: grid;
+  place-content: center;
 `;
 
 export default function Home() {
@@ -75,7 +92,7 @@ export default function Home() {
       });
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
+  // if (isLoading) return <p>Loading...</p>;
   if (!data) return <p>No advice left to give...</p>;
 
   const handleButtonClick = () => {
@@ -90,8 +107,25 @@ export default function Home() {
   return (
     <AppWrapper>
       <ContentWrapper>
-        <NumberWrapper>ADVICE {data.slip.id}</NumberWrapper>
-        <QuoteWrapper>&quot;{data.slip.advice}&quot;</QuoteWrapper>
+        {!isLoading && (
+          <>
+            <NumberWrapper>ADVICE {data.slip.id}</NumberWrapper>
+            <QuoteWrapper>&quot;{data.slip.advice}&quot;</QuoteWrapper>
+            <DividerWrapper>
+              <Image
+                src={MobileDivider}
+                alt=""
+                className="image"
+                layout="fill"
+                width={144}
+                height={16}
+              />
+            </DividerWrapper>
+          </>
+        )}
+        {isLoading && (
+          <p style={{ color: "var(--primary-light-cyan" }}>Loaing...</p>
+        )}
         <DiceWrapper>
           <button onClick={handleButtonClick}>
             <Image src={Dice} height={50} width={50} />
