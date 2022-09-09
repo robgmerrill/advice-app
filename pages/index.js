@@ -17,7 +17,7 @@ const AppWrapper = styled.div`
 const ContentWrapper = styled.div`
   background-color: var(--neutral-grayish-blue);
   border-radius: 16px;
-  height: 500px;
+  height: 350px;
   width: 600px;
   margin: 0 auto;
   position: relative;
@@ -26,11 +26,10 @@ const ContentWrapper = styled.div`
 
 const NumberWrapper = styled.div`
   font-size: 24px;
-  font-weight: 400;
   color: var(--primary-neon-green);
   letter-spacing: 5px;
   margin-top: 56px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   text-align: center;
 `;
 
@@ -43,14 +42,14 @@ const QuoteWrapper = styled.div`
 
 const DiceWrapper = styled.div`
   background-color: var(--primary-neon-green);
-  height: 150px;
-  width: 150px;
+  height: 80px;
+  width: 80px;
   border-radius: 100%;
   position: absolute;
-  bottom: -75px;
+  bottom: -40px;
   display: grid;
   place-content: center;
-  left: calc(50% - 75px);
+  left: calc(50% - 40px);
   transition: all 02 ease-in-out;
 
   button {
@@ -75,7 +74,7 @@ const DividerWrapper = styled.div`
   height: 30px;
   display: grid;
   place-content: center;
-  bottom: 100px;
+  bottom: 25px;
   left: 28px;
 `;
 
@@ -130,7 +129,7 @@ export default function Home() {
         )}
         <DiceWrapper>
           <button onClick={handleButtonClick}>
-            <Image src={Dice} height={50} width={50} />
+            <Image src={Dice} height={30} width={30} />
           </button>
         </DiceWrapper>
       </ContentWrapper>
