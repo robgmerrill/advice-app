@@ -94,7 +94,6 @@ export default function Home() {
   }, []);
 
   // if (isLoading) return <p>Loading...</p>;
-  if (!data) return <p>No advice left to give...</p>;
 
   const handleButtonClick = () => {
     fetch("https://api.adviceslip.com/advice")
