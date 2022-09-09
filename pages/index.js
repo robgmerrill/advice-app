@@ -91,7 +91,7 @@ export default function Home() {
     <AppWrapper>
       <ContentWrapper>
         <NumberWrapper>ADVICE {data.slip.id}</NumberWrapper>
-        <QuoteWrapper>"{data.slip.advice}"</QuoteWrapper>
+        <QuoteWrapper>&quot;{data.slip.advice}&quot;</QuoteWrapper>
         <DiceWrapper>
           <button onClick={handleButtonClick}>
             <Image src={Dice} height={50} width={50} />
