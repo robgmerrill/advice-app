@@ -70,11 +70,13 @@ const DiceWrapper = styled.div`
 const DividerWrapper = styled.div`
   margin-top: 38px;
   margin-bottom: 48px;
-  width: 100%;
-  position: relative;
+  width: 90%;
+  position: absolute;
   height: 30px;
   display: grid;
   place-content: center;
+  bottom: 100px;
+  left: 28px;
 `;
 
 export default function Home() {
