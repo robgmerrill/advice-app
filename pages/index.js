@@ -110,7 +110,7 @@ export default function Home() {
       <ContentWrapper>
         {!isLoading && (
           <>
-            <NumberWrapper>ADVICE {data.slip.id}</NumberWrapper>
+            <NumberWrapper>ADVICE #{data.slip.id}</NumberWrapper>
             <QuoteWrapper>&quot;{data.slip.advice}&quot;</QuoteWrapper>
             <DividerWrapper>
               <Image
