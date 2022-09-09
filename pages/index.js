@@ -94,6 +94,7 @@ export default function Home() {
   }, []);
 
   // if (isLoading) return <p>Loading...</p>;
+  if (!data) return <p>Gathering advice...</p>;
 
   const handleButtonClick = () => {
     fetch("https://api.adviceslip.com/advice")
@@ -124,6 +125,9 @@ export default function Home() {
           </>
         )}
         {isLoading && (
+          <p style={{ color: "var(--primary-light-cyan" }}>Loaing...</p>
+        )}
+        {!data && (
           <p style={{ color: "var(--primary-light-cyan" }}>Loaing...</p>
         )}
         <DiceWrapper>
